@@ -1,4 +1,9 @@
 # Changelog
+## 2.10.2
+- Updated API Version
+
+## 2.10.1
+- Added secrets template file
 
 ## 2.10.0
 - Added okta oidc authentication to `ingress` definition with `ingress.auth` flag
