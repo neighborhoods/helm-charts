@@ -1,4 +1,7 @@
 # Changelog
+## 2.11.0
+- Updated HPA template
+
 ## 2.10.2
 - Updated API Version
 
