@@ -1,4 +1,6 @@
 # Changelog
+## 2.11.3
+- Added chart.chart
 ## 2.11.2
 - Added common labels
 ## 2.11.1
