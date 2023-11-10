@@ -1,4 +1,6 @@
 # Changelog
+## 2.11.2
+- Added common labels
 ## 2.11.1
 - Added helm template chart.name
 ## 2.11.0

@@ -31,6 +31,18 @@ If release name contains chart name it will be used as a full name.
 {{- end }}
 
 {{/*
+Common labels
+*/}}
+{{- define "chart.labels" -}}
+helm.sh/chart: {{ include "chart.chart" . }}
+{{ include "chart.selectorLabels" . }}
+{{- if .Chart.AppVersion }}
+app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+{{- end }}
+app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- end }}
+
+{{/*
 Default name for nginx config map
 */}}
 {{- define "standard-app.v1.default-nginx-configmap-name" -}}
