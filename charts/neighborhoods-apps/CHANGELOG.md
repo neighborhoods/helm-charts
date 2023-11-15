@@ -1,4 +1,6 @@
 # Changelog
+## 2.12.1
+- Fix chart.fullname on serviceaccount template
 ## 2.12.0
 - Added serviceaccount template
 ## 2.11.4
