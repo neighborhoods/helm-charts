@@ -21,7 +21,6 @@ spec:
   template:
     metadata:
       annotations:
-        iam.amazonaws.com/role: {{ .Values.http.iamRole | default .Values.iamRole | default "" | quote}}
 {{ with .Values.extraPodAnnotations }}{{ toYaml . | indent 8 }}{{ end }}
 {{ with .Values.http.extraPodAnnotations }}{{ toYaml . | indent 8 }}{{ end }}
       labels:

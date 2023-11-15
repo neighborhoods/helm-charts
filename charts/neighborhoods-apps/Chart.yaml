@@ -1,7 +1,7 @@
 apiVersion: v2
 description: Neighborhoods standard chart setup with Nginx fronting the HTTP deployment
 name: neighborhoods-app
-version: 2.12.1
+version: 2.12.2
 kubeVersion: ">=1.23.0-0"
 home: https://github.com/neighborhoods/neighborhoods-chart
 sources:
