@@ -1,4 +1,6 @@
 # Changelog
+## 2.12.3
+- Fix serviceaccount name on deployment template
 ## 2.12.2
 - Removed iam role from deployment. Use serviceaccount instead
 ## 2.12.1

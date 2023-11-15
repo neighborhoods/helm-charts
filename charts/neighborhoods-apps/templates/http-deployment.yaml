@@ -30,7 +30,7 @@ spec:
     spec:
 {{ include "util.v1.extra.affinity" (.Values.http.affinity | default .Values.affinity) | indent 6 }}
 {{ include "util.v1.extra.tolerations" (.Values.http.tolerations | default .Values.tolerations) | indent 6 }}
-      serviceAccountName: {{ .Values.http.serviceAccountName | default .Values.serviceAccountName | default "" | quote }}
+      serviceAccountName: {{ include "standard-app.v1.serviceAccountName" . }}
       priorityClassName: {{ .Values.http.priorityClassName | default .Values.priorityClassName | default "" | quote }}
       containers:
       - name: app
