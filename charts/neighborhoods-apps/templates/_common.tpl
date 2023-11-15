@@ -122,3 +122,14 @@ startupProbe:
 {{ toYaml . | indent 2 }}
 {{ end }}
 {{ end }}
+
+{{/*
+Create the name of the service account to use
+*/}}
+{{- define "standard-app.v1.serviceAccountName" -}}
+{{- if .Values.serviceAccount.create -}}
+    {{ default (include "standard-app.v1.fullname" .) .Values.serviceAccount.name }}
+{{- else -}}
+    {{ default "default" .Values.serviceAccount.name }}
+{{- end -}}
+{{- end -}}
