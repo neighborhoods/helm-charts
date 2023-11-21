@@ -1,4 +1,6 @@
 # Changelog
+## 2.12.4
+- Fix deployment name on hpa
 ## 2.12.3
 - Fix serviceaccount name on deployment template
 ## 2.12.2
