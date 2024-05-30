@@ -1,4 +1,6 @@
 # Changelog
+## 2.13.0
+- Remove worker log pods
 ## 2.12.4
 - Fix deployment name on hpa
 ## 2.12.3
