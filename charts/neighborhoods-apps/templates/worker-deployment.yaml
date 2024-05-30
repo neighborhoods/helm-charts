@@ -1,7 +1,6 @@
 {{- $root := . -}}
 {{- $def := .Values.workerDefault -}}
 {{- range $id, $val := .Values.workers -}}
-{{- $logs := .logs | default $def.logs -}}
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -56,23 +55,17 @@ spec:
 {{ end}}
 {{ include "util.v1.extra.command_and_args" .app | indent 8 }}
 {{ include "util.v1.extra.resources" (.app.resources | default $def.app.resources) | indent 8 }}
-        volumeMounts:
-        - mountPath: {{ $root.Values.app.logRoot | required "Must specify .Values.app.logRoot" | quote }}
-          name: {{ include "util.v1.logwatch.name" "app"  | quote }}
 {{ with $root.Values.app.extraVolumeMounts }}{{ toYaml . | indent 8 }}{{ end }}
 {{ with $def.app.extraVolumeMounts }}{{ toYaml . | indent 8 }}{{ end }}
 {{ with .app.extraVolumeMounts }}{{ toYaml . | indent 8 }}{{ end }}
 
-{{ include "util.v1.logwatch.container_list" $logs | indent 6 }}
 {{ with $def.extraContainers }}{{ toYaml . | indent 6 }}{{ end }}
 {{ with .extraContainers }}{{ toYaml . | indent 6 }}{{ end }}
 
       initContainers:
 {{ with $def.extraInitContainers }}{{ toYaml . | indent 6 }}{{ end }}
 {{ with .extraInitContainers }}{{ toYaml . | indent 6 }}{{ end }}
-{{ include "util.v1.logwatch.container_init_list" $logs | indent 6 }}
       volumes:
-{{ include "util.v1.logwatch.volume_list" $logs | indent 6 }}
 {{ with $root.Values.extraVolumes }}{{ toYaml . | indent 6 }}{{ end }}
 {{ with $def.extraVolumes }}{{ toYaml . | indent 6 }}{{ end }}
 {{ with .extraVolumes }}{{ toYaml . | indent 6 }}{{ end }}
