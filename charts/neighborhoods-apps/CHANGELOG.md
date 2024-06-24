@@ -1,4 +1,6 @@
 # Changelog
+## 2.14.0
+- Swap from ALB to NGINX ingress
 ## 2.13.0
 - Remove worker log pods
 ## 2.12.4
