@@ -1,4 +1,6 @@
 # Changelog
+## 2.14.2
+- remove broken variables
 ## 2.14.1
 - Fix $serviceName being null
 ## 2.14.0

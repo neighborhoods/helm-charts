@@ -1,7 +1,4 @@
 {{ if .Values.ingress.enabled }}
-{{- $defaultServiceName := include "standard-app.v1.default-service-name" . -}}
-{{- $serviceName := default $defaultServiceName .Values.service.name -}}
-{{- $servicePort := .Values.service.port -}}
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -26,7 +23,7 @@ spec:
       service:
         name: {{ .Values.service.name }}
         port:
-          number: {{ $servicePort }}
+          number: {{ .Values.service.port }}
 {{- end }}
   rules:
   - host: {{ required ".Values.ingress.host must be specified when .Values.ingress.enabled is true" .Values.ingress.host | quote }}
@@ -38,7 +35,7 @@ spec:
           service:
             name: {{ .Values.service.name }}
             port:
-              number: {{ $servicePort }}
+              number: {{ .Values.service.port }}
 {{- range .Values.ingress.extraHosts }}
   - host: {{ . | quote }}
     http:
@@ -51,7 +48,7 @@ spec:
           service:
             name: {{ .Values.service.name }}
             port:
-              number: {{ $servicePort }}
+              number: {{ .Values.service.port }}
 {{- end }}
   tls:
     - hosts:
