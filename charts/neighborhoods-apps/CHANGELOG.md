@@ -1,4 +1,6 @@
 # Changelog
+## 2.14.1
+- Fix $serviceName being null
 ## 2.14.0
 - Swap from ALB to NGINX ingress
 ## 2.13.0
