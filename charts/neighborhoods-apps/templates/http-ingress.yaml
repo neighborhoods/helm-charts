@@ -13,7 +13,6 @@ metadata:
     ingress.kubernetes.io/force-ssl-redirect: "true"
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/backend-protocol: HTTP
-    {{- end }}
 {{ with .Values.ingress.extraAnnotations }}{{ toYaml . | indent 4 }}{{ end }}
 spec:
   ingressClassName: {{ .Values.ingress.className }}
