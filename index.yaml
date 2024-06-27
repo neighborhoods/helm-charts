@@ -2,6 +2,24 @@ apiVersion: v1
 entries:
   neighborhoods-app:
   - apiVersion: v2
+    created: "2024-06-27T22:44:26.394112258Z"
+    description: Neighborhoods standard chart setup with Nginx fronting the HTTP deployment
+    digest: 84ab0b8690d7808b0d6ba811d862f59328fcea060eabd2951b48d452960b1042
+    home: https://github.com/neighborhoods/neighborhoods-chart
+    keywords:
+    - standard-app
+    - nginx
+    kubeVersion: '>=1.23.0-0'
+    maintainers:
+    - name: devops
+      url: https://github.com/orgs/neighborhoods/teams/devops
+    name: neighborhoods-app
+    sources:
+    - https://github.com/neighborhoods/neighborhoods-chart
+    urls:
+    - https://github.com/neighborhoods/helm-charts/releases/download/neighborhoods-app-2.14.4/neighborhoods-app-2.14.4.tgz
+    version: 2.14.4
+  - apiVersion: v2
     created: "2024-06-24T15:40:18.438444238Z"
     description: Neighborhoods standard chart setup with Nginx fronting the HTTP deployment
     digest: e35b1e7015888de7e3ea52750a14e257d1294e10d0dda62dcafd186d24241532
@@ -307,4 +325,4 @@ entries:
     urls:
     - https://github.com/neighborhoods/helm-charts/releases/download/neighborhoods-app-2.10.1/neighborhoods-app-2.10.1.tgz
     version: 2.10.1
-generated: "2024-06-24T15:40:18.43857897Z"
+generated: "2024-06-27T22:44:26.394258152Z"
