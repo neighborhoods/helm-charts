@@ -1,4 +1,6 @@
 # Changelog
+## 2.14.4
+- cert-manager.io/cluster-issuer as value
 ## 2.14.3
 - remove leftover end
 ## 2.14.2
